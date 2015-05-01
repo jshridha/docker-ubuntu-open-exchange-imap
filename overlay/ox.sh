@@ -13,6 +13,10 @@ fi
 if [-z "$DB_HOST"]; then
   DB_HOST=localhost
 fi
+
+if [-z "$DB_PORT"]; then
+  DB_PORT=3306
+fi
 	#Memory JVM in MB
 MAX_MEMORY_FOR_JAVAVM=${MAX_MEMORY_FOR_JAVAVM:-1024}
 
