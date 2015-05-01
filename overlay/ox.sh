@@ -11,7 +11,7 @@ if [-z "$DB_PASSWORD"]; then
 fi
 
 if [-z "$DB_HOST"]; then
-  DB_HOST='localhost'
+  DB_HOST=localhost
 fi
 	#Memory JVM in MB
 MAX_MEMORY_FOR_JAVAVM=${MAX_MEMORY_FOR_JAVAVM:-1024}
