@@ -2,9 +2,13 @@
 
 randpw(){ < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-16};echo;}
 
+if [-z "$ADMIN_MASTER_PASSWORD"]; then
+  ADMIN_MASTER_PASSWORD='randpw'
+fi
 
-DB_PASSWORD=`randpw`
-ADMIN_MASTER_PASSWORD=`randpw`
+if [-z "$DB_PASSWORD"]; then
+  DB_PASSWORD='randpw'
+fi
 
 	#Memory JVM in MB
 MAX_MEMORY_FOR_JAVAVM=${MAX_MEMORY_FOR_JAVAVM:-1024}
