@@ -17,6 +17,11 @@ fi
 if [-z "$DB_PORT"]; then
   DB_PORT=3306
 fi
+
+if [-z "$DB_NAME"]; then
+  DB_PORT=configdb
+fi
+
 	#Memory JVM in MB
 MAX_MEMORY_FOR_JAVAVM=${MAX_MEMORY_FOR_JAVAVM:-1024}
 
