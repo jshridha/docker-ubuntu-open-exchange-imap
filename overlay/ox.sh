@@ -10,6 +10,9 @@ if [-z "$DB_PASSWORD"]; then
   DB_PASSWORD='randpw'
 fi
 
+if [-z "$DB_HOST"]; then
+  DB_HOST='localhost'
+fi
 	#Memory JVM in MB
 MAX_MEMORY_FOR_JAVAVM=${MAX_MEMORY_FOR_JAVAVM:-1024}
 
