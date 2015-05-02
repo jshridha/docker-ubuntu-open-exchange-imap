@@ -64,8 +64,8 @@ if [ ! -e /data/initialized ]; then
 	echo "Initializing OX"
 	echo "/opt/open-xchange/sbin/initconfigdb --configdb-user=$DB_USER --configdb-pass=$DB_PASSWORD --configdb-host=$DB_HOST --configdb-port=$DB_PORT --configdb-dbname=$DB_NAME -a"
 	/opt/open-xchange/sbin/initconfigdb --configdb-user=$DB_USER --configdb-pass=$DB_PASSWORD --configdb-host=$DB_HOST --configdb-port=$DB_PORT --configdb-dbname=$DB_NAME -a
-	echo "/opt/open-xchange/sbin/oxinstaller --no-license --servername=oxserver --configdb-pass=$DB_PASSWORD --master-pass=$ADMIN_MASTER_PASSWORD --network-listener-host=localhost --servermemory $MAX_MEMORY_FOR_JAVAVM"
-	/opt/open-xchange/sbin/oxinstaller --no-license --servername=oxserver --configdb-pass=$DB_PASSWORD --master-pass=$ADMIN_MASTER_PASSWORD --network-listener-host=localhost --servermemory $MAX_MEMORY_FOR_JAVAVM
+	echo "/opt/open-xchange/sbin/oxinstaller --no-license --servername=oxserver --configdb-user=$DB_USER --configdb-pass=$DB_PASSWORD --configdb-readhost=$DB_HOST --configdb-writehost=$DB_HOST --configdb-readport=$DB_PORT --configdb-writeport=$DB_PORT --configdb-dbname=$DB_NAME --master-pass=$ADMIN_MASTER_PASSWORD --network-listener-host=localhost --servermemory $MAX_MEMORY_FOR_JAVAVM"
+	/opt/open-xchange/sbin/oxinstaller --no-license --servername=oxserver --configdb-user=$DB_USER --configdb-pass=$DB_PASSWORD --configdb-readhost=$DB_HOST --configdb-writehost=$DB_HOST --configdb-readport=$DB_PORT --configdb-writeport=$DB_PORT --configdb-dbname=$DB_NAME --master-pass=$ADMIN_MASTER_PASSWORD --network-listener-host=localhost --servermemory $MAX_MEMORY_FOR_JAVAVM
 	touch /data/initialized
 fi
 
